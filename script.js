@@ -15,13 +15,14 @@ const promise2= (even)=> {
 	return new Promise((resolve,reject)=>{
    setTimeout(()=>{
 		let result=even.map((element,index)=>{
-			element*2;
-		})
+			return element*2;
+		});
 		resolve(result);
 	},2000);
 	
 });
 };
+
 promise1.then((even)=>{
 output.innerText=even;
 	return promise2(even);
