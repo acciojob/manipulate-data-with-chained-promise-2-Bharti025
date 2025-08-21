@@ -11,9 +11,10 @@ const promise1=new Promise((resolve,reject)=>{
 	},1000);
 })
 
-const promise2= new Promise((resolve,reject)=>{
-setTimeout(()=>{
-		let result=ans.map((element,index)=>{
+const promise2= (even)=> {
+	return new Promise((resolve,reject)=>{
+   setTimeout(()=>{
+		let result=even.map((element,index)=>{
 			element*2;
 		})
 		resolve(result);
@@ -22,10 +23,10 @@ setTimeout(()=>{
 });
 
 promise1.then((data)=>{
-output.textContent(data);	
-	return promise2;
-}).then((data)=>{
-	output.textContent(data);	
+output.innerText=data;
+	return promise2(even);
+}).then((result)=>{
+	output.innerText=result;
 })
 
 
