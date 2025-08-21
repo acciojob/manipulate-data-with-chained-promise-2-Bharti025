@@ -9,7 +9,7 @@ const promise1=new Promise((resolve,reject)=>{
 			 element % 2 === 0);
 		resolve(ans);
 	},1000);
-})
+});
 
 const promise2= (even)=> {
 	return new Promise((resolve,reject)=>{
@@ -21,9 +21,9 @@ const promise2= (even)=> {
 	},2000);
 	
 });
-
-promise1.then((data)=>{
-output.innerText=data;
+};
+promise1.then((even)=>{
+output.innerText=even;
 	return promise2(even);
 }).then((result)=>{
 	output.innerText=result;
